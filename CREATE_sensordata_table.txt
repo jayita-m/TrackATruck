@@ -1,0 +1,36 @@
+Database Name: iotdb
+Table: sensordata
+Schema:
+MariaDB [iotdb]> desc sensordata;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| TIMESTAMP   | bigint(20)  | NO   | PRI | NULL    |       |
+| date        | varchar(20) | NO   |     | NULL    |       |
+| time        | varchar(12) | NO   |     | NULL    |       |
+| name        | varchar(20) | NO   | PRI | NULL    |       |
+| ignStatus   | varchar(4)  | YES  |     | NULL    |       |
+| battStatus  | float       | YES  |     | NULL    |       |
+| engineTemp  | float       | YES  |     | NULL    |       |
+| engineOil   | float       | YES  |     | NULL    |       |
+| fuelLevel   | float       | YES  |     | NULL    |       |
+| engineSpeed | float       | YES  |     | NULL    |       |
+| hydraulicPr | float       | YES  |     | NULL    |       |
+| liftedLoad  | float       | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+SQL to create sensordata table:
+CREATE TABLE sensordata
+	(TIMESTAMP BIGINT NOT NULL,
+	date VARCHAR(20) NOT NULL,
+    time VARCHAR(12) NOT NULL,
+    name VARCHAR(20) NOT NULL,
+    ignStatus VARCHAR(4),
+    battStatus FLOAT,
+    engineTemp FLOAT,
+    engineOil FLOAT,
+    fuelLevel FLOAT,
+    engineSpeed FLOAT,
+    hydraulicPr FLOAT,
+    liftedLoad FLOAT,
+    PRIMARY KEY(TIMESTAMP, name) );

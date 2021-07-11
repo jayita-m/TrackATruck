@@ -1,0 +1,24 @@
+Database Name: iotdb
+Table: sensordata
+Schema:
+MariaDB [iotdb]> desc tripdata;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| trip_id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(16) | NO   |     | NULL    |                |
+| start_at    | datetime    | YES  |     | NULL    |                |
+| end_at      | datetime    | YES  |     | NULL    |                |
+| trip_time   | time        | YES  |     | NULL    |                |
+| trip_time_s | int(11)     | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+SQL to create tripdata table:
+CREATE TABLE tripdata
+	(trip_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(16) NOT NULL,
+    start_at TIMESTAMP,
+    end_at TIMESTAMP,
+    trip_time TIME,
+    trip_time_s INT,
+    PRIMARY KEY(trip_id) );
